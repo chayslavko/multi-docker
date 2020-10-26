@@ -32,7 +32,7 @@ const redisClient = redis.createClient({
   port: keys.redisPort,
   retry_strategy: () => 1000,
 });
-const redisPublisher = redisClient.duplicate();
+const redisPublisher = redisClient.duplicate(); 
 
 // Express route handlers
 
