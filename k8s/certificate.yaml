@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Ceetificate
+metadat:
+  name: k8s-multi-com-tls
+spec:
+  secretName: k8s-multi-com
+  issuerRef:
+    name: letsencrypt-prod
+    kinf: ClusterIssuer
+  commonName: chayka.bar
+  dnsNames:
+    - chayka.bar
+    - www.chayka.bar
+  acme:
+    config:
+      - http01:
+          ingressClass: ngnix
+        domains:
+          - chayka.bar
+          - www.chayka.bar
